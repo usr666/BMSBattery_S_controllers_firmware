@@ -1,3 +1,10 @@
+# Programming
+White - 9 +5V
+Gray  - 3 SWIM
+Blue  - 5 GND
+Purple- 1 RST
+
+
 # Important
 
 Caution! this is not a professional project. Anything you do with this firmware is at your own risk. In any case, use a quick fuse in the power supply to minimize the risk of destroying the controller, battery or motor!
