@@ -32,7 +32,7 @@
 
 static uint32_t ui32_dutycycle; // local version of setpoint
 
-static int8_t uint_PWM_Enable = 0; //flag for PWM state
+int8_t uint_PWM_Enable = 0; //flag for PWM state
 static uint16_t ui16_BatteryCurrent_accumulated = 2496L; //8x current offset, for filtering or Battery Current
 static uint16_t ui16_BatteryVoltage_accumulated;
 static uint16_t ui16_assist_percent_smoothed;

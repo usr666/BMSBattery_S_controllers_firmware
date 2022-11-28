@@ -142,8 +142,19 @@ void send_message() {
 	// B9: motor temperature
 	ui8_tx_buffer [9] = i8_motor_temperature - 15; //according to documentation at endless sphere
 	// B10 and B11: 0
-	ui8_tx_buffer [10] = 0;
-	ui8_tx_buffer [11] = 0;
+	
+  //ui8_tx_buffer [10] = 0; 
+  extern uint8_t PAS_act;
+  extern uint8_t pas_cnt;
+  extern uint8_t pas_ratio;
+  extern uint8_t PAS_is_active;
+  extern uint16_t ui16_setpoint;
+  ui8_tx_buffer [10] = ui16_setpoint;
+
+	//ui8_tx_buffer [11] = 0;
+  extern int8_t uint_PWM_Enable;
+  //ui8_tx_buffer [11] = hall_sensors;
+  ui8_tx_buffer [11] = uint_PWM_Enable;
 
 	// calculate CRC xor
 	ui8_crc = 0;

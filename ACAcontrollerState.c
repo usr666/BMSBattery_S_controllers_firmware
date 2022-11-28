@@ -182,7 +182,7 @@ void controllerstate_init(void) {
 	ui8_correction_at_angle = CORRECTION_AT_ANGLE;
 	flt_torquesensorCalibration = TQS_CALIB;
 	ui8_gear_ratio = GEAR_RATIO;
-
+/*
 	// read in overrides from eeprom if they are > 0, assuming 0s are uninitialized
 	eepromHighVal = eeprom_read(OFFSET_BATTERY_CURRENT_MAX_VALUE_HIGH_BYTE);
 	eepromVal = eeprom_read(OFFSET_BATTERY_CURRENT_MAX_VALUE);
@@ -279,7 +279,7 @@ void controllerstate_init(void) {
 	
 	eepromVal = eeprom_read(OFFSET_MOTOR_CONSTANT);
 	if (eepromVal > 0) flt_s_motor_constant = int2float(eepromVal, 4.0);
-
+*/
 	for (di = 0; di < 6; di++) {
 		uint8_t_hall_order[di] = 0;
 	}

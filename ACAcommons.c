@@ -237,14 +237,19 @@ void checkPasInActivity(void) {
 
 	}
 }
+uint8_t pas_cnt=0;
+uint8_t pas_ratio=0;
 
 void updatePasStatus(void) {
 
 	if (ui8_PAS_Flag == 1) {
+    pas_cnt++;
 		ui8_PAS_Flag = 0; //reset interrupt flag
 
 		ui16_time_ticks_between_pas_interrupt = ui16_time_ticks_for_pas_calculation; //save recent cadence
 		ui16_PAS_High = ui16_PAS_High_Counter;
+
+    pas_ratio = (uint8_t)((float) ui16_time_ticks_between_pas_interrupt / (float) ui16_PAS_High * (float)10);
 
 		if ((0 == (ui16_aca_flags & PAS_INVERTED)) && ((float) ui16_time_ticks_between_pas_interrupt / (float) ui16_PAS_High > flt_s_pas_threshold)) {
 			if (PAS_act < 7) {
