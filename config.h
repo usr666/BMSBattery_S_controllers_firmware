@@ -33,7 +33,7 @@
 #define P_FACTOR 0.5
 #define I_FACTOR 0.2
 #define GEAR_RATIO 11L
-#define PAS_THRESHOLD 1.7
+#define PAS_THRESHOLD 2.0 // 1.7 default
 #define RAMP_START 64000
 #define limit_with_throttle_override 25
 #define CORRECTION_AT_ANGLE 127
@@ -45,7 +45,7 @@
 #define ANGLE_1_240 171
 #define ANGLE_5_300 213
 #define TQS_CALIB 0.0
-#define ACA 4760
+#define ACA (4760+PAS_INVERTED) 
 #define EEPROM_INIT_MAGIC_BYTE 20 // makes sure (chance of fail 1/255) eeprom is invalidated after flashing new config
 #define ADC_BATTERY_VOLTAGE_K 70
 #define ACA_EXPERIMENTAL 128
